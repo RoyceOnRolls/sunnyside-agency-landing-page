@@ -1,0 +1,576 @@
+:root {
+  --softRed: hsl(7, 99%, 70%);
+  --yellow: hsl(51, 100%, 49%);
+  --darkDesaturatedCyan: hsl(167, 40%, 24%);
+  --darkBlue: hsl(198, 62%, 26%);
+  --darkModerateCyan: hsl(168, 34%, 41%);
+  --darkModerateCyanFooter: hsla(168, 34%, 41%, 0.7);
+  --veryDarkDesaturatedBlue: hsl(212, 27%, 19%);
+  --veryDarkGrayishBlue: hsl(213, 9%, 39%);
+  --darkGrayishBlue: hsl(232, 10%, 55%);
+  --grayishBlue: hsl(210, 4%, 67%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+picture,
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.125rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fraunces", serif;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 900;
+  color: var(--white);
+  font-size: 3rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+p {
+  text-align: center;
+  color: var(--veryDarkGrayishBlue);
+  margin: 25px;
+}
+
+h2 {
+  color: var(--veryDarkDesaturatedBlue);
+  font-weight: 900;
+  font-size: 2.3rem;
+  line-height: 1.1;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+}
+
+main a {
+  font-family: "Fraunces", serif;
+  color: var(--veryDarkDesaturatedBlue);
+  font-weight: 900;
+  margin-inline: auto;
+  text-transform: uppercase;
+}
+
+.hero img {
+  margin: 50px auto;
+}
+
+.bkg {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero {
+  background-image: url(./images/mobile/image-header.jpg);
+  background-position: bottom center;
+  min-height: max(100vh, 600px);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.brand a,
+.audience a {
+  position: relative;
+  z-index: 1;
+}
+.brand a::before {
+  content: "";
+  width: 110%;
+  height: 8px;
+  background-color: var(--yellow);
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  z-index: -1;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+
+.audience a::before {
+  content: "";
+  width: 110%;
+  height: 8px;
+  background-color: var(--softRed);
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  z-index: -1;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+
+.brand a:hover::before,
+.audience a:hover::before {
+  opacity: 1;
+}
+
+.graphic,
+.photography {
+  position: relative;
+}
+
+.graphic .content,
+.photography .content {
+  position: absolute;
+  bottom: 0;
+}
+
+.graphic p,
+.graphic h2 {
+  color: var(--darkDesaturatedCyan);
+}
+
+.photography p,
+.photography h2 {
+  color: var(--darkBlue);
+}
+
+.testimonials {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+h3 {
+  margin-top: 30px;
+  text-transform: uppercase;
+  color: var(--darkGrayishBlue);
+  letter-spacing: 0.2rem;
+}
+
+.card img {
+  width: 85px;
+  border-radius: 50%;
+  margin-inline: auto;
+}
+
+.card {
+  margin: 80px 0;
+}
+
+h4 {
+  font-weight: 900;
+  line-height: 0.1rem;
+}
+
+.role {
+  color: var(--darkGrayishBlue);
+  font-size: 0.9rem;
+  line-height: 0;
+}
+
+.word {
+  color: var(--veryDarkDesaturatedBlue);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project {
+  width: 50%;
+}
+
+footer {
+  background-color: var(--darkModerateCyanFooter);
+  padding: 70px 20px;
+}
+
+footer h2,
+footer a {
+  color: var(--darkDesaturatedCyan);
+}
+
+footer h2 {
+  font-weight: 900;
+}
+
+footer a {
+  font-family: "Barlow", sans-serif;
+  text-transform: capitalize;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 50px 0 60px 0;
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+body {
+  overflow-y: overlay;
+  position: relative;
+}
+
+nav {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+}
+
+main {
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+#links {
+  display: none;
+}
+
+@media only screen and (min-width: 700px) {
+  .project {
+    width: 25%;
+  }
+  .hero {
+    background-image: url(./images/desktop/image-header.jpg);
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  .brand,
+  .audience {
+    display: flex;
+    align-items: center;
+  }
+  .brand .figure,
+  .brand .content,
+  .audience .figure,
+  .audience .content {
+    width: 50%;
+  }
+  .brand {
+    flex-direction: row-reverse;
+  }
+  .cambo {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .cards {
+    display: flex;
+    gap: 50px;
+    padding-inline: 50px;
+  }
+  .project {
+    width: 25%;
+  }
+  #menu {
+    display: none;
+  }
+  nav {
+    padding: 0px 30px;
+    margin: 0;
+  }
+  #links {
+    display: flex;
+    gap: 50px;
+  }
+  #links a {
+    color: var(--white);
+  }
+  #contact {
+    font-family: "Fraunces", serif;
+    color: var(--veryDarkDesaturatedBlue) !important;
+    background-color: var(--white);
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-transform: uppercase;
+  }
+  #contact:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+footer a:hover {
+  color: var(--white);
+}
+
+footer img:hover {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(25deg)
+    brightness(104%) contrast(101%);
+}
+
+menu {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 5%;
+  width: 90%;
+}
+
+menu ul {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  background-color: var(--white);
+  margin: 0;
+  padding: 40px 40px 50px 40px;
+}
+
+menu ul li {
+  margin-inline: auto;
+}
+
+menu a {
+  color: var(--veryDarkGrayishBlue);
+}
+menu #contactYellow {
+  font-family: "Fraunces", serif;
+  color: var(--veryDarkDesaturatedBlue);
+  background-color: var(--yellow);
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-transform: uppercase;
+}
+#contactYellow:hover {
+  background-color: hsla(51, 100%, 49%, 0.5);
+}
+
+.trg {
+  border-color: transparent transparent var(--white) transparent;
+  border-style: solid;
+  border-width: 0px 0px 30px 30px;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  right: 0;
+  top: -30px;
+}
+
+/* FadeIn animation */
+.fadeIn {
+  animation: fadeIn 0.75s;
+  -webkit-animation: fadeIn 0.75s;
+  -moz-animation: fadeIn 0.75s;
+  -o-animation: fadeIn 0.75s;
+  -ms-animation: fadeIn 0.75s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Fade out animation */
+.fadeOut {
+  animation: fadeOut 0.75s;
+  -webkit-animation: fadeOut 0.75s;
+  -moz-animation: fadeOut 0.75s;
+  -o-animation: fadeOut 0.75s;
+  -ms-animation: fadeOut 0.75s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
